@@ -13,12 +13,21 @@ namespace Ahorcado_2020
     public partial class Form1 : Form
     {
         //almacena la palabra que hay que adivinar
-        String palabraOculta = "CETYS";
+        String palabraOculta;
         //variable que almacena el numero de fallos
         int numeroFallos = 0;
+        String palabraGuiones;
         public Form1()
         {
             InitializeComponent();
+            palabraOculta = eligePalabra();
+        }
+        public String eligePalabra()
+        {
+            String[] listaPalabras = { "Caca", "Cerveza", "Toma","DOOM","Fight Club" };
+            Random aleatorio = new Random();
+            int pos = aleatorio.Next(listaPalabras.Length);
+            return listaPalabras[pos].ToUpper();
         }
 
         private void letraPulsada(object sender, EventArgs e)
