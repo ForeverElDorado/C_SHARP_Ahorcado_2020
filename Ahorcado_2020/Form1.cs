@@ -13,22 +13,36 @@ namespace Ahorcado_2020
     public partial class Form1 : Form
     {
         //almacena la palabra que hay que adivinar
-        String palabraOculta;
+        String palabraOculta = eligePalabra();
         //variable que almacena el numero de fallos
         int numeroFallos = 0;
         String palabraGuiones;
         public Form1()
         {
             InitializeComponent();
-            palabraOculta = eligePalabra();
+            String _palabraGuiones = "";
+            for (int i = 0; i < palabraOculta.Length; i++)
+            {
+                if (palabraOculta[i] != ' ')
+                {
+                    _palabraGuiones += "_ ";
+                }
+                else
+                {
+                    _palabraGuiones += "  ";
+                }
+                label1.Text = _palabraGuiones;
+            }
+
         }
-        public String eligePalabra()
+        private static String eligePalabra()
         {
-            String[] listaPalabras = { "Caca", "Cerveza", "Toma","DOOM","Fight Club" };
+            String[] listaPalabras = { "HolA", "VLADikaKA", "BaBy YOdA" };
             Random aleatorio = new Random();
             int pos = aleatorio.Next(listaPalabras.Length);
             return listaPalabras[pos].ToUpper();
         }
+
 
         private void letraPulsada(object sender, EventArgs e)
         {
@@ -40,45 +54,46 @@ namespace Ahorcado_2020
             //chequear si la letra está en la palabraOculta
             if (palabraOculta.Contains(letra))
             {
-                int posicion = palabraOculta.IndexOf(letra);
-                label1.Text = label1.Text.Remove(2 * posicion, 1).Insert(2 * posicion, letra);
+                for (int i = 0; i < palabraOculta.Length; i++)
+                {
+                    if (palabraOculta[i] == letra[0])
+                    {
+                        label1.Text = label1.Text.Remove(2 * i, 1).Insert(2 * i, letra);
+                    }
+                }
             }
             else
             {
                 numeroFallos++;
             }
+
             if (!label1.Text.Contains('_'))
             {
                 numeroFallos = -100;
             }
             switch (numeroFallos)
             {
-                case 0:
-                    pictureBox1.Image = Properties.Resources.ahorcado_0;
+                case 0: pictureBox1.Image = Properties.Resources.ahorcado_0; 
                     break;
-                case 1:
-                    pictureBox1.Image = Properties.Resources.ahorcado_1;
+                case 1: pictureBox1.Image = Properties.Resources.ahorcado_1; 
                     break;
-                case 2:
-                    pictureBox1.Image = Properties.Resources.ahorcado_2;
+                case 2: pictureBox1.Image = Properties.Resources.ahorcado_2; 
                     break;
-                case 3:
-                    pictureBox1.Image = Properties.Resources.ahorcado_3;
+                case 3: pictureBox1.Image = Properties.Resources.ahorcado_3; 
                     break;
-                case 4:
-                    pictureBox1.Image = Properties.Resources.ahorcado_4;
+                case 4: pictureBox1.Image = Properties.Resources.ahorcado_4; 
                     break;
-                case 5:
-                    pictureBox1.Image = Properties.Resources.ahorcado_5;
+                case 5: pictureBox1.Image = Properties.Resources.ahorcado_5;
                     break;
-                case 6:
-                    pictureBox1.Image = Properties.Resources.ahorcado_fin;
+                case 6: pictureBox1.Image = Properties.Resources.ahorcado_fin;
                     break;
                 case -100: pictureBox1.Image = Properties.Resources.acertastetodo;
                     break;
-                default: pictureBox1.Image = Properties.Resources.ahorcado_fin;
+                default: pictureBox1.Image = Properties.Resources.ahorcado_fin; 
                     break;
             }
         }
     }
 }
+        
+
