@@ -81,28 +81,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\acertastetodo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ahorcado_0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ahorcado_1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ahorcado_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ahorcado_3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ahorcado_4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ahorcado_5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ahorcado_fin.png" />
+    <Content Include="Resources\acertastetodo.png" />
+    <Content Include="Resources\ahorcado_0.png" />
+    <Content Include="Resources\ahorcado_1.png" />
+    <Content Include="Resources\ahorcado_2.png" />
+    <Content Include="Resources\ahorcado_3.png" />
+    <Content Include="Resources\ahorcado_4.png" />
+    <Content Include="Resources\ahorcado_5.png" />
+    <Content Include="Resources\ahorcado_fin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

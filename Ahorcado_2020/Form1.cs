@@ -12,6 +12,11 @@ namespace Ahorcado_2020
 {
     public partial class Form1 : Form
     {
+        /*WRITTEN AND DIRECTED BY ALVARO GARCIA HERRERO
+         * Ahorcado, funciona con palabras que salen de forma aleatoria dentro de un array.
+         * Imagenes de perder y ganar cambiadas.
+         * 
+         */
         //almacena la palabra que hay que adivinar
         String palabraOculta = eligePalabra();
         //variable que almacena el numero de fallos
@@ -37,7 +42,7 @@ namespace Ahorcado_2020
         }
         private static String eligePalabra()
         {
-            String[] listaPalabras = { "HolA", "VLADikaKA", "BaBy YOdA" };
+            String[] listaPalabras = { "HolA", "Ganador", "Doom","Cerveza","el Hoyo" };
             Random aleatorio = new Random();
             int pos = aleatorio.Next(listaPalabras.Length);
             return listaPalabras[pos].ToUpper();
@@ -89,8 +94,7 @@ namespace Ahorcado_2020
                     break;
                 case -100: pictureBox1.Image = Properties.Resources.acertastetodo;
                     break;
-                default: pictureBox1.Image = Properties.Resources.ahorcado_fin; 
-                    break;
+                default: pictureBox1.Image = Properties.Resources.ahorcado_fin; break;
             }
         }
     }
